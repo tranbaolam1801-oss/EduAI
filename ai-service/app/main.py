@@ -3,7 +3,9 @@ from fastapi.responses import JSONResponse
 
 from app.api.routes.agents import router as agents_router
 from app.api.routes.health import router as health_router
+from app.api.routes.jobs import router as jobs_router
 from app.api.routes.mentor import router as mentor_router
+from app.api.routes.quiz import router as quiz_router
 from app.core.config import get_settings
 from app.core.exceptions import ApplicationError
 
@@ -45,3 +47,5 @@ async def unhandled_error_handler(_request: Request, error: Exception) -> JSONRe
 app.include_router(health_router, prefix="/api/v1")
 app.include_router(agents_router, prefix="/api/v1")
 app.include_router(mentor_router, prefix="/api/v1")
+app.include_router(quiz_router, prefix="/api/v1")
+app.include_router(jobs_router, prefix="/api/v1")

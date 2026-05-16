@@ -1,0 +1,5 @@
+.page-career-selection .hero-card {
+  background:
+    linear-gradient(135deg, rgba(91, 51, 206, 0.98), rgba(20, 26, 71, 0.92)),
+    radial-gradient(circle at 80% 24%, rgba(255, 202, 99, 0.2), transparent 24%);
+}

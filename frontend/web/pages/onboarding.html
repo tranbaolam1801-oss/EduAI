@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduAI - Onboarding</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/layout.css" />
+    <link rel="stylesheet" href="../assets/css/components.css" />
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
+    <link rel="stylesheet" href="../assets/css/onboarding.css" />
+  </head>
+  <body class="page page-onboarding" data-page-key="onboarding">
+    <div class="app-shell" id="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand">
+          <div class="brand__mark"><span class="brand__mark-core"></span></div>
+          <div>
+            <p class="brand__title">EduAI</p>
+            <p class="brand__subtitle">Nền tảng học tập và nghề nghiệp AI</p>
+          </div>
+        </div>
+
+        <div class="sidebar__section">
+          <p class="sidebar__label">Điều hướng chính</p>
+          <nav class="sidebar__nav">
+            <a class="nav-item" data-page="dashboard" href="./dashboard.html"><span class="nav-item__icon"></span><span>Tổng quan</span></a>
+            <a class="nav-item" data-page="learning-path" href="./learning-path.html"><span class="nav-item__icon"></span><span>Lộ trình học</span></a>
+            <a class="nav-item" data-page="skill-assessment" href="./skill-assessment.html"><span class="nav-item__icon"></span><span>Đánh giá kỹ năng</span></a>
+            <a class="nav-item" data-page="skill-gap" href="./skill-gap.html"><span class="nav-item__icon"></span><span>Khoảng cách kỹ năng</span></a>
+            <a class="nav-item" data-page="resources" href="./resources.html"><span class="nav-item__icon"></span><span>Tài liệu học tập</span></a>
+          </nav>
+        </div>
+
+        <div class="sidebar__section">
+          <p class="sidebar__label">Lộ trình phát triển</p>
+          <nav class="sidebar__nav">
+            <a class="nav-item" data-page="onboarding" href="./onboarding.html"><span class="nav-item__icon"></span><span>Khởi tạo hành trình</span></a>
+            <a class="nav-item" data-page="career-selection" href="./career-selection.html"><span class="nav-item__icon"></span><span>Chọn nghề nghiệp</span></a>
+            <a class="nav-item" data-page="progress-tracking" href="./progress-tracking.html"><span class="nav-item__icon"></span><span>Tiến độ học tập</span></a>
+            <a class="nav-item" data-page="reports" href="./reports.html"><span class="nav-item__icon"></span><span>Thống kê & báo cáo</span></a>
+          </nav>
+        </div>
+
+        <div class="sidebar__section">
+          <p class="sidebar__label">Mô-đun mở rộng</p>
+          <nav class="sidebar__nav">
+            <a class="nav-item" data-page="quiz" href="./quiz.html"><span class="nav-item__icon"></span><span>Bài kiểm tra</span></a>
+            <a class="nav-item" data-page="ai-mentor" href="./ai-mentor.html"><span class="nav-item__icon"></span><span>AI Mentor</span></a>
+            <a class="nav-item" data-page="job-opportunities" href="./job-opportunities.html"><span class="nav-item__icon"></span><span>Cơ hội nghề nghiệp</span></a>
+            <a class="nav-item" data-page="community" href="./community.html"><span class="nav-item__icon"></span><span>Cộng đồng</span></a>
+          </nav>
+        </div>
+
+        <section class="sidebar__spotlight">
+          <p class="sidebar__spotlight-label">Trạng thái nền tảng</p>
+          <h2>Khởi tạo hành trình</h2>
+          <p id="quick-note">Đăng ký hoặc đăng nhập để bắt đầu dùng nền tảng.</p>
+          <div class="sidebar__pulse"><span></span><span></span><span></span></div>
+        </section>
+      </aside>
+
+      <button class="app-shell__overlay" id="sidebar-overlay" type="button" aria-label="Đóng menu"></button>
+
+      <div class="workspace">
+        <header class="topbar">
+          <div class="topbar__intro">
+            <button class="sidebar-toggle" id="sidebar-toggle" type="button" aria-expanded="false">Mở menu</button>
+            <div>
+              <p class="eyebrow">Hệ thống học tập và nghề nghiệp AI</p>
+              <h1 id="page-title">Onboarding & hồ sơ học tập</h1>
+              <p class="screen-description" id="page-description">Đăng nhập, đăng ký và hoàn thiện hồ sơ nền tảng để bắt đầu hành trình học tập AI.</p>
+            </div>
+          </div>
+
+          <div class="topbar__actions">
+            <form class="search-box" id="global-search-form">
+              <span class="search-box__icon"></span>
+              <input id="global-search-input" type="search" placeholder="Tìm nhanh màn hình hoặc chức năng..." autocomplete="off" />
+            </form>
+            <div class="status-bar">
+              <div class="status-chip"><span>Backend</span><strong id="backend-status">Chưa kiểm tra</strong></div>
+              <div class="status-chip"><span>AI Service</span><strong id="ai-status">Chưa kiểm tra</strong></div>
+            </div>
+            <div class="profile-badge">
+              <div class="profile-badge__avatar" id="profile-avatar">K</div>
+              <div>
+                <p class="profile-badge__name" id="profile-name">Khách</p>
+                <p class="profile-badge__role" id="profile-role">Chưa đăng nhập</p>
+              </div>
+            </div>
+            <button class="ghost-button" id="logout-button" type="button">Đăng xuất</button>
+          </div>
+        </header>
+
+        <main class="workspace-grid">
+          <section class="content-stage">
+            <div class="message-box" id="message-box" hidden></div>
+
+            <div class="screen-shell">
+              <section class="hero-card">
+                <div class="hero-card__header">
+                  <div>
+                    <p class="eyebrow">Khởi tạo hành trình</p>
+                    <h3 class="hero-title" id="onboarding-hero-title">Tạo tài khoản và bắt đầu hành trình</h3>
+                    <p class="section-subtitle">Trang này kết hợp đăng nhập, đăng ký và hồ sơ học tập để bạn không phải quay lại nhiều màn hình.</p>
+                  </div>
+                  <div id="onboarding-status-tag"></div>
+                </div>
+              </section>
+
+              <div class="two-column-grid">
+                <section class="content-card" id="onboarding-profile-section" hidden>
+                  <div class="section-header">
+                    <div>
+                      <h3 class="section-title">Hồ sơ học tập</h3>
+                      <p class="section-subtitle">Thông tin này dùng cho cá nhân hóa roadmap và tài liệu học tập.</p>
+                    </div>
+                  </div>
+                  <form id="profile-form" class="form-grid">
+                    <label><span>Lĩnh vực học tập</span><select id="profile-field-select" name="field_id" required></select></label>
+                    <label><span>Trường học</span><input name="university" required /></label>
+                    <label><span>Chuyên ngành</span><input name="major" required /></label>
+                    <label><span>Năm học</span><input type="number" min="1" max="8" name="academic_year" /></label>
+                    <label><span>Mức độ hiện tại</span><input name="current_level" placeholder="Ví dụ: Cơ bản" /></label>
+                    <label><span>Số giờ học mỗi tuần</span><input type="number" min="0" name="study_hours_per_week" /></label>
+                    <label><span>Số tháng mục tiêu</span><input type="number" min="1" name="target_completion_months" /></label>
+                    <label><span>Khu vực ưu tiên</span><input name="preferred_location" /></label>
+                    <label class="full-width"><span>Ghi chú mục tiêu nghề nghiệp</span><textarea rows="4" name="career_goal_note"></textarea></label>
+                    <button class="primary-button full-width" id="profile-submit-button" type="submit">Lưu hồ sơ</button>
+                  </form>
+                </section>
+
+                <section class="content-card">
+                  <div id="onboarding-auth-section">
+                    <div class="dual-grid">
+                      <form id="register-form" class="content-card form-grid">
+                        <div class="section-header">
+                          <div>
+                            <h3 class="section-title">Đăng ký tài khoản</h3>
+                            <p class="section-subtitle">Tạo tài khoản sinh viên mới bằng API thật.</p>
+                          </div>
+                        </div>
+                        <label><span>Họ và tên</span><input name="full_name" required /></label>
+                        <label><span>Email</span><input type="email" name="email" required /></label>
+                        <label><span>Mật khẩu</span><input type="password" name="password" minlength="6" required /></label>
+                        <label><span>Số điện thoại</span><input name="phone" /></label>
+                        <button class="primary-button full-width" type="submit">Tạo tài khoản</button>
+                      </form>
+
+                      <form id="login-form" class="content-card form-grid">
+                        <div class="section-header">
+                          <div>
+                            <h3 class="section-title">Đăng nhập</h3>
+                            <p class="section-subtitle">Khôi phục phiên làm việc và tiếp tục học tập.</p>
+                          </div>
+                        </div>
+                        <label><span>Email</span><input type="email" name="email" required /></label>
+                        <label><span>Mật khẩu</span><input type="password" name="password" required /></label>
+                        <button class="primary-button full-width" type="submit">Đăng nhập</button>
+                      </form>
+                    </div>
+                  </div>
+
+                  <div id="onboarding-account-section" hidden>
+                    <div class="section-header">
+                      <div>
+                        <h3 class="section-title">Trạng thái khởi tạo</h3>
+                        <p class="section-subtitle">Bạn có thể chuyển ngay sang các bước tiếp theo.</p>
+                      </div>
+                    </div>
+                    <div class="list-stack">
+                      <article class="resource-card">
+                        <h4 class="job-card__title">Tài khoản</h4>
+                        <p class="helper-text" id="onboarding-account-email">Chưa có</p>
+                      </article>
+                      <article class="resource-card">
+                        <h4 class="job-card__title">Hồ sơ</h4>
+                        <p class="helper-text" id="onboarding-profile-status">Chưa hoàn tất</p>
+                      </article>
+                      <div class="career-actions">
+                        <a class="primary-button" href="./skill-assessment.html">Tiếp tục đánh giá kỹ năng</a>
+                        <a class="secondary-button" href="./dashboard.html">Về dashboard</a>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </section>
+
+          <aside class="mentor-panel">
+            <div class="mentor-panel__hero">
+              <div class="mentor-panel__orb"></div>
+              <div>
+                <p class="mentor-panel__eyebrow">AI Mentor</p>
+                <h3>Trợ lý học tập thông minh</h3>
+                <p id="mentor-side-note" class="section-subtitle">Đăng nhập trước để AI Mentor có thể hiểu ngữ cảnh và lưu tiến trình học tập.</p>
+              </div>
+            </div>
+
+            <div class="mentor-panel__card">
+              <p class="mentor-panel__card-title">Gợi ý nhanh</p>
+              <div class="mentor-panel__actions">
+                <a href="./skill-assessment.html">Đến đánh giá kỹ năng</a>
+                <a href="./career-selection.html">Chọn nghề nghiệp</a>
+                <a href="./dashboard.html">Mở dashboard</a>
+                <a href="./ai-mentor.html">Mở AI Mentor</a>
+              </div>
+            </div>
+
+            <div class="mentor-panel__card">
+              <p class="mentor-panel__card-title">Nhịp học hôm nay</p>
+              <div id="mentor-side-metrics" class="mentor-panel__metrics">
+                <div class="mentor-metric"><span>Trạng thái</span><strong>Khách</strong></div>
+                <div class="mentor-metric"><span>Hồ sơ</span><strong>Chưa hoàn tất</strong></div>
+                <div class="mentor-metric"><span>Bước tiếp theo</span><strong>Đăng nhập</strong></div>
+              </div>
+            </div>
+          </aside>
+        </main>
+      </div>
+    </div>
+
+    <script type="module" src="../assets/js/api.js"></script>
+    <script type="module" src="../assets/js/layout.js"></script>
+    <script type="module" src="../assets/js/onboarding.js"></script>
+  </body>
+</html>

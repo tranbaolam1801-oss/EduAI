@@ -6,13 +6,13 @@ export const authenticateRequest = (req, _res, next) => {
   const [scheme, token] = authorizationHeader.split(" ");
 
   if (scheme !== "Bearer" || !token) {
-    return next(new AppError("Authentication is required.", 401, "UNAUTHORIZED"));
+    return next(new AppError("Vui lòng đăng nhập để tiếp tục.", 401, "UNAUTHORIZED"));
   }
 
   try {
     req.auth = verifyAccessToken(token);
     return next();
   } catch (_error) {
-    return next(new AppError("Invalid or expired token.", 401, "INVALID_TOKEN"));
+    return next(new AppError("Phiên đăng nhập không hợp lệ hoặc đã hết hạn.", 401, "INVALID_TOKEN"));
   }
 };

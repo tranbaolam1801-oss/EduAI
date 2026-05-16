@@ -1,0 +1,5 @@
+.page-progress-tracking .hero-card {
+  background:
+    linear-gradient(135deg, rgba(52, 79, 202, 0.98), rgba(16, 23, 55, 0.92)),
+    radial-gradient(circle at 82% 24%, rgba(69, 200, 255, 0.18), transparent 24%);
+}

@@ -1,4 +1,4 @@
-export const sendSuccess = (res, { statusCode = 200, message = "Success", data = {}, meta } = {}) => {
+export const sendSuccess = (res, { statusCode = 200, message = "Thành công.", data = {}, meta } = {}) => {
   const payload = {
     success: true,
     message,
@@ -17,7 +17,7 @@ export const sendError = (
   {
     statusCode = 500,
     code = "INTERNAL_SERVER_ERROR",
-    message = "Unexpected server error.",
+    message = "Đã xảy ra lỗi không mong muốn.",
     details = []
   } = {}
 ) =>

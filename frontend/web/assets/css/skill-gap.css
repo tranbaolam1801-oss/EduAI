@@ -1,0 +1,5 @@
+.page-skill-gap .hero-card {
+  background:
+    linear-gradient(135deg, rgba(90, 34, 130, 0.98), rgba(14, 19, 49, 0.92)),
+    radial-gradient(circle at 84% 24%, rgba(255, 131, 157, 0.2), transparent 24%);
+}

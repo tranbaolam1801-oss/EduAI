@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../features/ai_mentor/presentation/pages/ai_mentor_shell_page.dart';
 import '../../features/dashboard/presentation/pages/dashboard_shell_page.dart';
-import '../../features/jobs/presentation/pages/jobs_shell_page.dart';
 import '../../features/profile/presentation/pages/profile_shell_page.dart';
+import '../../features/reports/presentation/pages/reports_shell_page.dart';
 import '../../features/roadmap/presentation/pages/roadmap_shell_page.dart';
 
 class MainNavigationShell extends StatefulWidget {
@@ -20,7 +20,7 @@ class _MainNavigationShellState extends State<MainNavigationShell> {
     DashboardShellPage(),
     RoadmapShellPage(),
     AiMentorShellPage(),
-    JobsShellPage(),
+    ReportsShellPage(),
     ProfileShellPage(),
   ];
 
@@ -42,7 +42,7 @@ class _MainNavigationShellState extends State<MainNavigationShell> {
           NavigationDestination(
             icon: Icon(Icons.dashboard_outlined),
             selectedIcon: Icon(Icons.dashboard),
-            label: 'Trang chủ',
+            label: 'Tổng quan',
           ),
           NavigationDestination(
             icon: Icon(Icons.route_outlined),
@@ -52,12 +52,12 @@ class _MainNavigationShellState extends State<MainNavigationShell> {
           NavigationDestination(
             icon: Icon(Icons.auto_awesome_outlined),
             selectedIcon: Icon(Icons.auto_awesome),
-            label: 'Mentor',
+            label: 'AI Mentor',
           ),
           NavigationDestination(
-            icon: Icon(Icons.work_outline),
-            selectedIcon: Icon(Icons.work),
-            label: 'Việc làm',
+            icon: Icon(Icons.assessment_outlined),
+            selectedIcon: Icon(Icons.assessment),
+            label: 'Báo cáo',
           ),
           NavigationDestination(
             icon: Icon(Icons.person_outline),

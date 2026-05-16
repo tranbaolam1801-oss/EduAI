@@ -1,0 +1,5 @@
+.page-learning-path .hero-card {
+  background:
+    linear-gradient(135deg, rgba(72, 45, 196, 0.98), rgba(14, 21, 57, 0.92)),
+    radial-gradient(circle at 84% 24%, rgba(89, 242, 176, 0.18), transparent 24%);
+}

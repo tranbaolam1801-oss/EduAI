@@ -10,6 +10,6 @@ export const validateRequest = (req, _res, next) => {
   }
 
   return next(
-    new AppError("Invalid request data.", 400, "VALIDATION_ERROR", result.array())
+    new AppError("Dữ liệu không hợp lệ.", 400, "VALIDATION_ERROR", result.array())
   );
 };

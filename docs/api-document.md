@@ -45,7 +45,9 @@ Luồng tổng quát: User -> Frontend -> Backend API -> SQL Server / AI Service
 
 4.1. Base URL
 
-Môi trường phát triển: http://localhost:8000/api/v1
+Môi trường phát triển Backend API: http://localhost:3000/api/v1
+
+AI Service nội bộ: http://localhost:8000
 
 Môi trường triển khai: https://domain-cua-he-thong/api/v1
 

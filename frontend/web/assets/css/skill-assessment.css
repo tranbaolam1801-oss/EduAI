@@ -1,0 +1,5 @@
+.page-skill-assessment .hero-card {
+  background:
+    linear-gradient(135deg, rgba(49, 58, 171, 0.98), rgba(13, 24, 61, 0.92)),
+    radial-gradient(circle at 80% 24%, rgba(69, 200, 255, 0.22), transparent 24%);
+}

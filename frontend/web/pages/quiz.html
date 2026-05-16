@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduAI - Kiểm tra & đánh giá</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/layout.css" />
+    <link rel="stylesheet" href="../assets/css/components.css" />
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
+    <link rel="stylesheet" href="../assets/css/quiz.css" />
+  </head>
+  <body class="page page-quiz" data-page-key="quiz">
+    <div class="app-shell" id="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand"><div class="brand__mark"><span class="brand__mark-core"></span></div><div><p class="brand__title">EduAI</p><p class="brand__subtitle">Nền tảng học tập và nghề nghiệp AI</p></div></div>
+        <div class="sidebar__section"><p class="sidebar__label">Điều hướng chính</p><nav class="sidebar__nav"><a class="nav-item" data-page="dashboard" href="./dashboard.html"><span class="nav-item__icon"></span><span>Tổng quan</span></a><a class="nav-item" data-page="learning-path" href="./learning-path.html"><span class="nav-item__icon"></span><span>Lộ trình học</span></a><a class="nav-item" data-page="skill-assessment" href="./skill-assessment.html"><span class="nav-item__icon"></span><span>Đánh giá kỹ năng</span></a><a class="nav-item" data-page="skill-gap" href="./skill-gap.html"><span class="nav-item__icon"></span><span>Khoảng cách kỹ năng</span></a><a class="nav-item" data-page="resources" href="./resources.html"><span class="nav-item__icon"></span><span>Tài liệu học tập</span></a></nav></div>
+        <div class="sidebar__section"><p class="sidebar__label">Lộ trình phát triển</p><nav class="sidebar__nav"><a class="nav-item" data-page="onboarding" href="./onboarding.html"><span class="nav-item__icon"></span><span>Khởi tạo hành trình</span></a><a class="nav-item" data-page="career-selection" href="./career-selection.html"><span class="nav-item__icon"></span><span>Chọn nghề nghiệp</span></a><a class="nav-item" data-page="progress-tracking" href="./progress-tracking.html"><span class="nav-item__icon"></span><span>Tiến độ học tập</span></a><a class="nav-item" data-page="reports" href="./reports.html"><span class="nav-item__icon"></span><span>Thống kê & báo cáo</span></a></nav></div>
+        <div class="sidebar__section"><p class="sidebar__label">Mô-đun mở rộng</p><nav class="sidebar__nav"><a class="nav-item" data-page="quiz" href="./quiz.html"><span class="nav-item__icon"></span><span>Kiểm tra & đánh giá</span></a><a class="nav-item" data-page="ai-mentor" href="./ai-mentor.html"><span class="nav-item__icon"></span><span>AI Mentor</span></a><a class="nav-item" data-page="job-opportunities" href="./job-opportunities.html"><span class="nav-item__icon"></span><span>Cơ hội nghề nghiệp</span></a><a class="nav-item" data-page="community" href="./community.html"><span class="nav-item__icon"></span><span>Cộng đồng</span></a></nav></div>
+        <section class="sidebar__spotlight"><p class="sidebar__spotlight-label">Trạng thái nền tảng</p><h2>Kiểm tra & đánh giá</h2><p id="quick-note">Sinh quiz theo kỹ năng hiện có, làm bài và nhận phản hồi học tập ngay trong một màn hình.</p><div class="sidebar__pulse"><span></span><span></span><span></span></div></section>
+      </aside>
+      <button class="app-shell__overlay" id="sidebar-overlay" type="button" aria-label="Đóng menu"></button>
+      <div class="workspace">
+        <header class="topbar"><div class="topbar__intro"><button class="sidebar-toggle" id="sidebar-toggle" type="button" aria-expanded="false">Mở menu</button><div><p class="eyebrow">Hệ thống học tập và nghề nghiệp AI</p><h1 id="page-title">Kiểm tra & đánh giá</h1><p class="screen-description" id="page-description">Tạo quiz theo kỹ năng, bắt đầu lượt làm bài và chấm điểm ngay bằng quy trình API + SQL Server.</p></div></div><div class="topbar__actions"><form class="search-box" id="global-search-form"><span class="search-box__icon"></span><input id="global-search-input" type="search" placeholder="Tìm nhanh màn hình hoặc chức năng..." autocomplete="off" /></form><div class="status-bar"><div class="status-chip"><span>Backend</span><strong id="backend-status">Chưa kiểm tra</strong></div><div class="status-chip"><span>AI Service</span><strong id="ai-status">Chưa kiểm tra</strong></div></div><div class="profile-badge"><div class="profile-badge__avatar" id="profile-avatar">K</div><div><p class="profile-badge__name" id="profile-name">Khách</p><p class="profile-badge__role" id="profile-role">Chưa đăng nhập</p></div></div><button class="ghost-button" id="logout-button" type="button">Đăng xuất</button></div></header>
+        <main class="workspace-grid">
+          <section class="content-stage">
+            <div class="message-box" id="message-box" hidden></div>
+            <div class="screen-shell">
+              <div class="metric-grid" id="quiz-metrics"></div>
+              <section class="hero-card">
+                <div class="hero-card__header"><div><p class="eyebrow">Khởi tạo quiz</p><h3 class="hero-title">Tạo bài kiểm tra theo kỹ năng đang học</h3><p class="section-subtitle">API tạo quiz sẽ lưu trực tiếp vào Quizzes, QuizQuestions và QuizOptions. Khi nộp bài, điểm số sẽ cập nhật về QuizAttempts.</p></div><div id="quiz-status-tag"></div></div>
+                <form id="quiz-generate-form" class="form-grid">
+                  <label><span>Kỹ năng</span><select id="quiz-skill-select" name="skill_id" required></select></label>
+                  <label><span>Mức độ</span><select id="quiz-difficulty-select" name="difficulty_level" required><option value="BASIC">Cơ bản</option><option value="INTERMEDIATE">Trung bình</option><option value="ADVANCED">Nâng cao</option></select></label>
+                  <label><span>Số câu hỏi</span><input type="number" name="number_of_questions" min="1" max="20" value="5" required /></label>
+                  <label><span>Thời gian (phút)</span><input type="number" name="time_limit_minutes" min="1" max="240" value="20" /></label>
+                  <button class="primary-button full-width" type="submit">Tạo quiz mới</button>
+                </form>
+              </section>
+              <div class="two-column-grid">
+                <section class="content-card">
+                  <div class="section-header"><div><h3 class="section-title">Kho bài kiểm tra</h3><p class="section-subtitle">Chọn một bài kiểm tra để xem câu hỏi và bắt đầu lượt làm bài mới.</p></div></div>
+                  <div class="quiz-grid" id="quiz-card-list"></div>
+                  <section class="content-card">
+                    <div class="section-header"><div><h3 class="section-title">Lịch sử làm bài</h3><p class="section-subtitle">Dữ liệu lấy từ QuizAttempts và kết quả chấm điểm thực tế.</p></div></div>
+                    <div class="schedule-list" id="quiz-attempt-history"></div>
+                  </section>
+                </section>
+                <section class="content-card">
+                  <div class="section-header"><div><h3 class="section-title" id="quiz-detail-title">Chưa chọn bài kiểm tra</h3><p class="section-subtitle" id="quiz-detail-meta">Hãy chọn một quiz để xem chi tiết.</p></div><div class="career-actions"><button class="primary-button" id="quiz-start-button" type="button">Bắt đầu làm bài</button></div></div>
+                  <p class="helper-text" id="quiz-detail-description">Thông tin chi tiết và danh sách câu hỏi sẽ hiển thị ở đây.</p>
+                  <form id="quiz-attempt-form">
+                    <div class="list-stack" id="quiz-question-list"></div>
+                    <div class="career-actions">
+                      <button class="primary-button full-width" id="quiz-submit-button" type="submit">Nộp bài kiểm tra</button>
+                    </div>
+                  </form>
+                </section>
+              </div>
+            </div>
+          </section>
+          <aside class="mentor-panel"><div class="mentor-panel__hero"><div class="mentor-panel__orb"></div><div><p class="mentor-panel__eyebrow">AI Mentor</p><h3>Trợ lý học tập thông minh</h3><p id="mentor-side-note" class="section-subtitle">Kết quả quiz sẽ được dùng để điều chỉnh tư vấn học tập và cập nhật kỹ năng khi phù hợp.</p></div></div><div class="mentor-panel__card"><p class="mentor-panel__card-title">Gợi ý nhanh</p><div class="mentor-panel__actions"><a href="./skill-assessment.html">Xem kỹ năng</a><a href="./skill-gap.html">Xem skill gap</a><a href="./resources.html">Mở tài liệu</a><a href="./ai-mentor.html">Hỏi AI Mentor</a></div></div><div class="mentor-panel__card"><p class="mentor-panel__card-title">Nhịp học hôm nay</p><div id="mentor-side-metrics" class="mentor-panel__metrics"><div class="mentor-metric"><span>Quiz đã có</span><strong>0</strong></div><div class="mentor-metric"><span>Điểm gần nhất</span><strong>Chưa có</strong></div><div class="mentor-metric"><span>Kỹ năng trọng tâm</span><strong>Đang chờ</strong></div></div></div></aside>
+        </main>
+      </div>
+    </div>
+    <script type="module" src="../assets/js/api.js"></script>
+    <script type="module" src="../assets/js/layout.js"></script>
+    <script type="module" src="../assets/js/quiz.js"></script>
+  </body>
+</html>

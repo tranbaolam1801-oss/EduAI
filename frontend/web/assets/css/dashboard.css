@@ -1,0 +1,5 @@
+.page-dashboard .hero-card {
+  background:
+    linear-gradient(135deg, rgba(87, 56, 224, 0.98), rgba(16, 38, 98, 0.92)),
+    radial-gradient(circle at 85% 20%, rgba(74, 217, 255, 0.24), transparent 22%);
+}

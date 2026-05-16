@@ -1,0 +1,5 @@
+.page-onboarding .hero-card {
+  background:
+    linear-gradient(135deg, rgba(69, 38, 172, 0.98), rgba(15, 23, 60, 0.92)),
+    radial-gradient(circle at 80% 20%, rgba(240, 94, 255, 0.22), transparent 22%);
+}

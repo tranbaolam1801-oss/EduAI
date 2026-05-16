@@ -365,3 +365,49 @@ Sử dụng các keyword:
 - premium dashboard UI
 - modern data visualization
 - elegant dark theme
+
+---
+
+# Responsive Rules
+
+## Breakpoints
+
+- Desktop: >= 1200px
+- Tablet: 768px - 1199px
+- Mobile: < 768px
+
+## Layout behavior
+
+- Sidebar
+- Desktop: sidebar cố định bên trái.
+- Tablet: sidebar thu gọn theo dạng đóng/mở.
+- Mobile: sidebar ẩn mặc định và mở theo dạng drawer.
+
+- Main content
+- Desktop: bố cục nhiều cột cho dashboard và khu vực nội dung rộng.
+- Tablet: chuyển về bố cục 2 cột cho các khối nội dung chính.
+- Mobile: toàn bộ nội dung xếp thành 1 cột dọc.
+
+- AI panel
+- Desktop: hiển thị ở cột bên phải.
+- Tablet: chuyển xuống dưới nội dung chính nếu cần.
+- Mobile: có thể ẩn để ưu tiên nội dung học tập chính.
+
+## Responsive component rules
+
+- Card, biểu đồ, form và bảng không được tràn ra ngoài màn hình.
+- Dùng `grid`, `flex`, `minmax()` và `clamp()` để co giãn theo kích thước màn hình.
+- Bảng dữ liệu phải có vùng cuộn ngang an toàn khi chiều rộng nhỏ.
+- Input và button phải đủ lớn để thao tác cảm ứng trên mobile.
+- Khoảng cách, padding và kích thước chữ phải giảm hợp lý trên tablet và mobile.
+
+## Mobile foundation
+
+- Mobile app dùng bottom navigation với 5 mục chính:
+  - Tổng quan
+  - Lộ trình
+  - AI Mentor
+  - Báo cáo
+  - Hồ sơ
+- Các màn hình Kỹ năng, Tài liệu và Bài kiểm tra mở như subpage từ dashboard hoặc hồ sơ.
+- Mobile UI vẫn ưu tiên hành trình học tập trước, việc làm là mô-đun phụ trợ.

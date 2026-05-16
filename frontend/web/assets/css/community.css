@@ -1,0 +1,5 @@
+.page-community .hero-card {
+  background:
+    linear-gradient(135deg, rgba(76, 42, 174, 0.98), rgba(16, 23, 56, 0.92)),
+    radial-gradient(circle at 82% 24%, rgba(255, 202, 99, 0.18), transparent 24%);
+}

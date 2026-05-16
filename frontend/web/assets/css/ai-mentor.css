@@ -1,0 +1,9 @@
+.page-ai-mentor .hero-card {
+  background:
+    linear-gradient(135deg, rgba(88, 50, 214, 0.98), rgba(13, 18, 52, 0.92)),
+    radial-gradient(circle at 82% 24%, rgba(240, 94, 255, 0.2), transparent 24%);
+}
+
+.page-ai-mentor .mentor-message-list {
+  min-height: 320px;
+}

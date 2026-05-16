@@ -1,0 +1,9 @@
+.page-job-opportunities .hero-card {
+  background:
+    linear-gradient(135deg, rgba(63, 58, 189, 0.98), rgba(14, 21, 58, 0.92)),
+    radial-gradient(circle at 82% 24%, rgba(69, 200, 255, 0.18), transparent 24%);
+}
+
+.page-job-opportunities .job-card {
+  min-height: 220px;
+}

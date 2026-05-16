@@ -1,11 +1,15 @@
 import dotenv from "dotenv";
-import { resolve } from "node:path";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 
-dotenv.config({ path: resolve(process.cwd(), ".env") });
-dotenv.config({ path: resolve(process.cwd(), "..", ".env"), override: false });
-
-const backendRoot = process.cwd();
+const configDirectory = dirname(fileURLToPath(import.meta.url));
+const sourceRoot = resolve(configDirectory, "..");
+const backendRoot = resolve(sourceRoot, "..");
 const workspaceRoot = resolve(backendRoot, "..");
+
+dotenv.config({ path: resolve(workspaceRoot, ".env") });
+dotenv.config({ path: resolve(backendRoot, ".env"), override: true });
+
 const uploadRoot = resolve(workspaceRoot, "storage", "uploads");
 
 const toNumber = (value, fallback) => {

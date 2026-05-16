@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduAI - AI Mentor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/layout.css" />
+    <link rel="stylesheet" href="../assets/css/components.css" />
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
+    <link rel="stylesheet" href="../assets/css/ai-mentor.css" />
+  </head>
+  <body class="page page-ai-mentor" data-page-key="ai-mentor">
+    <div class="app-shell" id="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand"><div class="brand__mark"><span class="brand__mark-core"></span></div><div><p class="brand__title">EduAI</p><p class="brand__subtitle">Nền tảng học tập và nghề nghiệp AI</p></div></div>
+        <div class="sidebar__section"><p class="sidebar__label">Điều hướng chính</p><nav class="sidebar__nav"><a class="nav-item" data-page="dashboard" href="./dashboard.html"><span class="nav-item__icon"></span><span>Tổng quan</span></a><a class="nav-item" data-page="learning-path" href="./learning-path.html"><span class="nav-item__icon"></span><span>Lộ trình học</span></a><a class="nav-item" data-page="skill-assessment" href="./skill-assessment.html"><span class="nav-item__icon"></span><span>Đánh giá kỹ năng</span></a><a class="nav-item" data-page="skill-gap" href="./skill-gap.html"><span class="nav-item__icon"></span><span>Khoảng cách kỹ năng</span></a><a class="nav-item" data-page="resources" href="./resources.html"><span class="nav-item__icon"></span><span>Tài liệu học tập</span></a></nav></div>
+        <div class="sidebar__section"><p class="sidebar__label">Lộ trình phát triển</p><nav class="sidebar__nav"><a class="nav-item" data-page="onboarding" href="./onboarding.html"><span class="nav-item__icon"></span><span>Khởi tạo hành trình</span></a><a class="nav-item" data-page="career-selection" href="./career-selection.html"><span class="nav-item__icon"></span><span>Chọn nghề nghiệp</span></a><a class="nav-item" data-page="progress-tracking" href="./progress-tracking.html"><span class="nav-item__icon"></span><span>Tiến độ học tập</span></a><a class="nav-item" data-page="reports" href="./reports.html"><span class="nav-item__icon"></span><span>Thống kê & báo cáo</span></a></nav></div>
+        <div class="sidebar__section"><p class="sidebar__label">Mô-đun mở rộng</p><nav class="sidebar__nav"><a class="nav-item" data-page="quiz" href="./quiz.html"><span class="nav-item__icon"></span><span>Kiểm tra & đánh giá</span></a><a class="nav-item" data-page="ai-mentor" href="./ai-mentor.html"><span class="nav-item__icon"></span><span>AI Mentor</span></a><a class="nav-item" data-page="job-opportunities" href="./job-opportunities.html"><span class="nav-item__icon"></span><span>Cơ hội nghề nghiệp</span></a><a class="nav-item" data-page="community" href="./community.html"><span class="nav-item__icon"></span><span>Cộng đồng</span></a></nav></div>
+        <section class="sidebar__spotlight"><p class="sidebar__spotlight-label">Trạng thái nền tảng</p><h2>AI Mentor</h2><p id="quick-note">Tạo phiên chat, hỏi theo bối cảnh thật và nhận gợi ý học tập có cấu trúc.</p><div class="sidebar__pulse"><span></span><span></span><span></span></div></section>
+      </aside>
+      <button class="app-shell__overlay" id="sidebar-overlay" type="button" aria-label="Đóng menu"></button>
+      <div class="workspace">
+        <header class="topbar"><div class="topbar__intro"><button class="sidebar-toggle" id="sidebar-toggle" type="button" aria-expanded="false">Mở menu</button><div><p class="eyebrow">Hệ thống học tập và nghề nghiệp AI</p><h1 id="page-title">AI Mentor</h1><p class="screen-description" id="page-description">Trò chuyện theo ngữ cảnh hồ sơ, kỹ năng, roadmap và nhận gợi ý học tập ở định dạng rõ ràng.</p></div></div><div class="topbar__actions"><form class="search-box" id="global-search-form"><span class="search-box__icon"></span><input id="global-search-input" type="search" placeholder="Tìm nhanh màn hình hoặc chức năng..." autocomplete="off" /></form><div class="status-bar"><div class="status-chip"><span>Backend</span><strong id="backend-status">Chưa kiểm tra</strong></div><div class="status-chip"><span>AI Service</span><strong id="ai-status">Chưa kiểm tra</strong></div></div><div class="profile-badge"><div class="profile-badge__avatar" id="profile-avatar">K</div><div><p class="profile-badge__name" id="profile-name">Khách</p><p class="profile-badge__role" id="profile-role">Chưa đăng nhập</p></div></div><button class="ghost-button" id="logout-button" type="button">Đăng xuất</button></div></header>
+        <main class="workspace-grid">
+          <section class="content-stage">
+            <div class="message-box" id="message-box" hidden></div>
+            <div class="screen-shell">
+              <section class="hero-card">
+                <div class="hero-card__header"><div><p class="eyebrow">Mentor theo ngữ cảnh</p><h3 class="hero-title">Đặt câu hỏi theo lộ trình học hiện tại</h3><p class="section-subtitle">Tin nhắn được lưu vào ChatSessions và ChatMessages. Phản hồi AI hiện dùng skeleton có cấu trúc từ FastAPI.</p></div><div id="mentor-page-status-tag"></div></div>
+                <form id="mentor-session-form" class="form-grid">
+                  <label class="full-width"><span>Tạo phiên trò chuyện mới</span><input type="text" name="title" maxlength="200" placeholder="Ví dụ: Ôn SQL trước kỳ thực tập" /></label>
+                  <button class="primary-button full-width" type="submit">Tạo phiên mới</button>
+                </form>
+              </section>
+              <div class="mentor-layout">
+                <section class="content-card">
+                  <div class="section-header"><div><h3 class="section-title">Phiên trò chuyện</h3><p class="section-subtitle">Chọn một phiên để tiếp tục hỏi AI Mentor.</p></div></div>
+                  <div class="list-stack" id="mentor-session-list"></div>
+                  <section class="content-card">
+                    <div class="section-header"><div><h3 class="section-title">Gợi ý AI</h3><p class="section-subtitle">Lấy từ AIRecommendations của tài khoản hiện tại.</p></div></div>
+                    <div class="list-stack" id="mentor-recommendation-list"></div>
+                  </section>
+                </section>
+                <section class="content-card">
+                  <div class="section-header"><div><h3 class="section-title" id="mentor-active-session-title">Chưa chọn phiên trò chuyện</h3><p class="section-subtitle">Tin nhắn mới sẽ được hiển thị theo đúng thứ tự thời gian.</p></div></div>
+                  <div class="mentor-message-list" id="mentor-message-list"></div>
+                  <form id="mentor-message-form" class="form-grid">
+                    <label class="full-width"><span>Câu hỏi dành cho AI Mentor</span><textarea rows="4" id="mentor-message-input" name="message_content" placeholder="Ví dụ: Mình yếu SQL thì nên luyện phần nào trước?"></textarea></label>
+                    <button class="primary-button full-width" type="submit">Gửi câu hỏi</button>
+                  </form>
+                </section>
+              </div>
+              <div class="two-column-grid">
+                <section class="content-card"><div class="section-header"><div><h3 class="section-title">Ngành học</h3><p class="section-subtitle">Ngữ cảnh lấy từ hồ sơ học tập.</p></div></div><p class="helper-text" id="mentor-context-major">Chưa cập nhật hồ sơ</p></section>
+                <section class="content-card"><div class="section-header"><div><h3 class="section-title">Nghề mục tiêu</h3><p class="section-subtitle">Ngữ cảnh lấy từ career goals.</p></div></div><p class="helper-text" id="mentor-context-goal">Chưa lưu nghề mục tiêu</p></section>
+                <section class="content-card"><div class="section-header"><div><h3 class="section-title">Roadmap hiện tại</h3><p class="section-subtitle">Ngữ cảnh lấy từ lộ trình học đang có.</p></div></div><p class="helper-text" id="mentor-context-roadmap">Chưa có roadmap</p></section>
+                <section class="content-card"><div class="section-header"><div><h3 class="section-title">Kỹ năng nổi bật</h3><p class="section-subtitle">Dùng để định hướng câu trả lời ngắn gọn hơn.</p></div></div><div class="chip-row" id="mentor-context-skills"></div></section>
+              </div>
+            </div>
+          </section>
+          <aside class="mentor-panel"><div class="mentor-panel__hero"><div class="mentor-panel__orb"></div><div><p class="mentor-panel__eyebrow">AI Mentor</p><h3>Trợ lý học tập thông minh</h3><p id="mentor-side-note" class="section-subtitle">AI Mentor ưu tiên lộ trình học, kỹ năng cần ôn và hành động kế tiếp thay vì trả lời chung chung.</p></div></div><div class="mentor-panel__card"><p class="mentor-panel__card-title">Gợi ý nhanh</p><div class="mentor-panel__actions"><a href="./learning-path.html">Xem roadmap</a><a href="./quiz.html">Mở quiz</a><a href="./resources.html">Mở tài liệu</a><a href="./dashboard.html">Về dashboard</a></div></div><div class="mentor-panel__card"><p class="mentor-panel__card-title">Nhịp học hôm nay</p><div id="mentor-side-metrics" class="mentor-panel__metrics"><div class="mentor-metric"><span>Phiên chat</span><strong>0</strong></div><div class="mentor-metric"><span>Gợi ý AI</span><strong>0</strong></div><div class="mentor-metric"><span>Roadmap</span><strong>Đang chờ</strong></div></div></div></aside>
+        </main>
+      </div>
+    </div>
+    <script type="module" src="../assets/js/api.js"></script>
+    <script type="module" src="../assets/js/layout.js"></script>
+    <script type="module" src="../assets/js/ai-mentor.js"></script>
+  </body>
+</html>

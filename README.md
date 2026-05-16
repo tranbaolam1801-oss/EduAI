@@ -466,6 +466,39 @@ Then:
 database/seed.sql
 ```
 
+## SQL Server Connection Setup
+
+Before starting the backend, create a real environment file:
+
+1. Copy `.env.example` to `.env`
+2. Or copy `backend/.env.example` to `backend/.env`
+
+The backend reads these SQL Server variables:
+
+```env
+DB_HOST=localhost
+DB_PORT=1433
+DB_NAME=AI_LearningCareerDB
+DB_USER=sa
+DB_PASSWORD=your_sql_server_password
+DB_ENCRYPT=false
+DB_TRUST_SERVER_CERTIFICATE=true
+```
+
+Notes:
+
+- `DB_HOST` must point to the SQL Server instance that contains `AI_LearningCareerDB`
+- `DB_PORT` is usually `1433` for SQL Server TCP
+- `DB_USER` and `DB_PASSWORD` must be a real SQL Server login, not the placeholder values from `.env.example`
+- If you use both files, `backend/.env` overrides the root `.env` for backend startup
+- SQL Server must allow SQL Authentication for the configured login
+
+You can verify the connection after startup with:
+
+```text
+GET http://localhost:3000/api/v1/system/health
+```
+
 ---
 
 ## Backend
@@ -474,6 +507,19 @@ database/seed.sql
 cd backend
 npm install
 npm run dev
+```
+
+If database configuration is correct, `GET /api/v1/system/health` should return:
+
+```json
+{
+  "success": true,
+  "data": {
+    "database": {
+      "status": "connected"
+    }
+  }
+}
 ```
 
 ---
@@ -490,10 +536,17 @@ uvicorn app.main:app --reload
 
 ## Frontend Web
 
-Open:
+Serve the static multi-page UI:
 
-```text id="xal0zf"
-frontend/web/
+```bash
+cd frontend/web
+python -m http.server 8080
+```
+
+Then open:
+
+```text
+http://localhost:8080/pages/dashboard.html
 ```
 
 ---
@@ -505,6 +558,73 @@ cd frontend/app
 flutter pub get
 flutter run
 ```
+
+Notes:
+
+- Default backend API in Flutter: `http://localhost:3000/api/v1`
+- Default AI service base URL in Flutter: `http://localhost:8000`
+- For Android Emulator, override build-time values when needed:
+
+```bash
+flutter run --dart-define=BACKEND_API_URL=http://10.0.2.2:3000/api/v1 --dart-define=AI_SERVICE_URL=http://10.0.2.2:8000
+```
+
+---
+
+## Docker Compose
+
+Build and run the main services:
+
+```bash
+docker compose up --build
+```
+
+Available services:
+
+- `backend` -> `http://localhost:3000/api/v1`
+- `ai-service` -> `http://localhost:8000`
+- `frontend-web` -> `http://localhost:8080`
+
+The backend container mounts uploads from:
+
+```text
+./storage -> /workspace/storage
+```
+
+This keeps `/uploads/*` working inside Docker because the backend resolves uploads from:
+
+```text
+/workspace/storage/uploads
+```
+
+### SQL Server in Docker
+
+The compose file includes an optional `sqlserver` service under the `sqlserver` profile.
+
+Run it with:
+
+```bash
+docker compose --profile sqlserver up --build
+```
+
+If you already use an external SQL Server, keep using it and set these variables in `.env`:
+
+```env
+DOCKER_DB_HOST=host.docker.internal
+DOCKER_DB_PORT=1433
+DOCKER_DB_NAME=AI_LearningCareerDB
+DOCKER_DB_USER=sa
+DOCKER_DB_PASSWORD=your_sql_server_password
+DOCKER_DB_ENCRYPT=false
+DOCKER_DB_TRUST_SERVER_CERTIFICATE=true
+```
+
+### Container URL Wiring
+
+- Backend -> AI Service: `http://ai-service:8000`
+- AI Service -> Backend: `http://backend:3000/api/v1`
+- Public Backend API: `http://localhost:3000/api/v1`
+- Public AI Service: `http://localhost:8000`
 
 ---
 

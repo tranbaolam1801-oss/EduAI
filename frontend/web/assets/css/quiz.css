@@ -1,0 +1,15 @@
+.page-quiz .hero-card {
+  background:
+    linear-gradient(135deg, rgba(88, 54, 196, 0.98), rgba(17, 26, 63, 0.92)),
+    radial-gradient(circle at 84% 24%, rgba(255, 202, 99, 0.18), transparent 24%);
+}
+
+.page-quiz .quiz-option {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.page-quiz .quiz-option input {
+  margin-top: 4px;
+}
